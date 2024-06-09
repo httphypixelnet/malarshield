@@ -76,7 +76,7 @@
         text-decoration: none;
         font-size: 25px;
         color: #0f0f0f;
-        display: block;
+        display: none;
         transition: 0.3s;
       }
       #sidebar a:hover {
@@ -122,6 +122,10 @@
         // Function to open the sidebar
         function openSidebar() {
           document.getElementById("sidebar").style.width = "250px";
+          const a = Array.from(document.getElementById('sidebar').getElementsByTagName('a'))
+          for (const i of a) {
+            i.style.display = 'block';
+          }
         }
   
         // Function to close the sidebar
