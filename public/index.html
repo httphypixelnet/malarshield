@@ -108,9 +108,9 @@
     <!-- Sidebar -->
     <div id="sidebar">
         <a href="javascript:void(0)" id="closeBtn">&times;</a>
-        <a href="javascript:void(0)" id="homeBtn">Homepage</a>
-        <a href="javascript:void(0)" id="page1Btn">Page 1</a>
-        <a href="javascript:void(0)" id="page2Btn">Page 2</a>
+        <a href="javascript:void(0)" class='sidebar-link' id="homeBtn">Homepage</a>
+        <a href="javascript:void(0)" class='sidebar-link' id="page1Btn">Page 1</a>
+        <a href="javascript:void(0)" class='sidebar-link' id="page2Btn">Page 2</a>
       </div>
   
       <!-- Up Arrow Button -->
@@ -122,7 +122,7 @@
         // Function to open the sidebar
         function openSidebar() {
           document.getElementById("sidebar").style.width = "250px";
-          const a = Array.from(document.getElementById('sidebar').getElementsByTagName('a'))
+          const a = Array.from(document.getElementsByClassName('sidebar-link'));
           for (const i of a) {
             i.style.display = 'block';
           }
@@ -130,7 +130,7 @@
   
         // Function to close the sidebar
         function closeSidebar() {
-          const a = Array.from(document.getElementById('sidebar').getElementsByTagName('a'))
+          const a = Array.from(document.getElementsByClassName('sidebar-link'))
           for (const i of a) {
             i.style.display = 'none';
           }
@@ -150,7 +150,7 @@
   
         // Get the button
         const upArrowBtn = document.getElementById('upArrowBtn');
-  
+        
         // Show the button when the user scrolls down 20px from the top of the document
         window.onscroll = function() {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
