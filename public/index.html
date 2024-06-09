@@ -126,6 +126,10 @@
   
         // Function to close the sidebar
         function closeSidebar() {
+          const a = Array.from(document.getElementById('sidebar').getElementsByTagName('a'))
+          for (const i of a) {
+            i.style.display = 'none';
+          }
           document.getElementById("sidebar").style.width = "0";
         }
         // Event listeners for the menu and close buttons
