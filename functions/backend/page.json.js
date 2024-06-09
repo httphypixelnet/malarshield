@@ -8,14 +8,14 @@ export async function onRequest(context) {
 
     switch (page) {
         case '0':
-            response = await fetch('/home.html');
+            response = await fetch('https://malarshield.pages.dev/home.html');
             break;
         case '1':
-            response = await fetch('/page1.html');
+            response = await fetch('https://malarshield.pages.dev/page1.html');
             title = true;
             break;
         case '2':
-            response = await fetch('/page2.html');
+            response = await fetch('https://malarshield.pages.dev/page2.html');
             break;
         default:
             return new Response(JSON.stringify({ error: 'Invalid page' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
