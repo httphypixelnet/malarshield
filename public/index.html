@@ -2,109 +2,31 @@
 <html>
   <head>
     <link rel="prefetch" href="style.css">
-    <link rel="prefetch" href="home.style.css">
     <link rel="prefetch" href="favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MalarShield</title>
-    <script src="main.js"></script>
-    <link id="css" rel="stylesheet" href="">
+    <title>MalarKilla</title>
+    <script src="main.max.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style id="css"></style>
     <!-- Embed Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <!-- Embed Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-      body {
-        font-family: sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-      h1.title {
-        font-family: 'Pacifico', cursive;
-      }
-      /* Style for the up arrow button */
-      #upArrowBtn {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  font-size: 24px;
-  background-color: #86A8AC;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 10px; /* Rounded square */
-  cursor: pointer;
-  z-index: 1000;
-  display: block; /* Ensure the button is visible by default */
-}
-      #upArrowBtn:hover {
-        background-color: #516769;
-      }
-      .material-icons {
-        vertical-align: middle;
-      }
-      /* Style for the menu button */
-      #menuBtn {
-        position: fixed;
-        top: 10px;
-        left: 20px;
-        background-color: transparent;
-        border: none;
-        font-size: 36px;
-        color: #000;
-        cursor: pointer;
-        z-index: 1000;
-      }
-      #menuBtn:hover {
-        color: #555;
-      }
-      /* Style for the sidebar */
-      #sidebar {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: #45757b;
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 60px;
-        z-index: 1001;
-      }
-      #sidebar a {
-        padding: 10px 15px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #0f0f0f;
-        display: block;
-        transition: 0.3s;
-      }
-      #sidebar a:hover {
-        color: #f1f1f1;
-      }
-      #closeBtn {
-        position: absolute;
-        top: 10px;
-        left: 35px;
-        font-size: 36px;
-        margin-left: 50px;
-        color: #818181;
-      }
-      #closeBtn:hover {
-        color: #f1f1f1;
-      }
-    </style>
   </head>
   <body>
     <header>
       <button id="menuBtn">
         <span class="material-icons">menu</span>
       </button>
-      <h1 class="title" style="font-size: 3em; align-self: 10px;">MalarShield</h1>
+      <h1 class="title" style="font-size: 3em; align-self: 10px;">MalarKilla</h1>
       <img id="malimg">
       <h2 id="title" style="color: #fff"></h2>
     </header>
     <main id="content"></main>
+    <footer>
+      <p>&COPY;2024 MalarKilla&TRADE;. All rights reserved.</p>
+    </footer>
     <!-- Sidebar -->
     <div id="sidebar">
         <a href="javascript:void(0)" id="closeBtn">&times;</a>
@@ -135,6 +57,7 @@
         document.getElementById("homeBtn").addEventListener("click", () => {page(0)})
         document.getElementById("page1Btn").addEventListener("click", () => {page(1)})
         document.getElementById("page2Btn").addEventListener("click", () => {page(2)})
+        document.getElementById("sidebar").addEventListener("mouseleave", () => {closeSidebar()})
         // Function to scroll to the top of the page
         function scrollToTop() {
           window.scrollTo({ top: 0, behavior: 'smooth' });
